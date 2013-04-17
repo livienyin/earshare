@@ -52,13 +52,20 @@ class EarshareController < ApplicationController
       end
       shared_artists
     end
+
+    def rank_shared_artists
+      find_shared_artists.to_a.sort_by do |artist, playcounts|
+        playcounts[0].to_i * playcounts[1].to_i
+      end.reverse
+    end
+    
   end  
 
   def home
   end
 
   def stats
-    @comparer = UserArtistComparer.new('mttwld', 'ivanmalison')
+    @comparer = UserArtistComparer.new('alexaross', 'ivanmalison')
     @one_max = @comparer.find_shared_artists.map {|key, value| value[0].to_i}.max
     @two_max = @comparer.find_shared_artists.map {|key, value| value[1].to_i}.max
     puts @one_max

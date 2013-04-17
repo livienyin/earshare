@@ -1,6 +1,6 @@
 <h1>stats</h1>
 <table>
-<% @comparer.find_shared_artists.each do |artist, playcounts| %>
+<% @comparer.rank_shared_artists.each do |artist, playcounts| %>
 <tr>
 <td style="width: 500px;">
   <div style="width: 500px;"
@@ -9,6 +9,9 @@
       <%= playcounts[0] %>
     </span>
   </div>
+</td>
+<td style="text-align: center">
+  <%= artist %>
 </td>
 <td style="width: 500px;">
   <div style="width: 500px;"
