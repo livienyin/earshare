@@ -1,0 +1,25 @@
+<h1>stats</h1>
+<table>
+<% @comparer.find_shared_artists.each do |artist, playcounts| %>
+<tr>
+<td style="width: 500px;">
+  <div style="width: 500px;"
+     class="chartbar left">
+    <span style="width: <%= 100 * (playcounts[0].to_f / @one_max.to_f) %>%;">
+      <%= playcounts[0] %>
+    </span>
+  </div>
+</td>
+<td style="width: 500px;">
+  <div style="width: 500px;"
+       class="chartbar right">
+    <span style="width:<%= 100 * (playcounts[1].to_f / @two_max.to_f) %>%;">
+      <%= playcounts[1] %>
+    </span>
+  </div>
+</td>
+</tr>
+<% end %>
+</table>
+
+

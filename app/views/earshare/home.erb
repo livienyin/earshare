@@ -1,0 +1,8 @@
+<h1>Home</h1>
+<h2>Enter Last.fm usernames to see shared tunes</h2>
+<form>
+  <input type="text" name="firstname" placeholder="first username">
+  <input type="text" name="firstname" placeholder="second username"><br />
+  <a href="testing" id="commonize">Assess us!</a>
+</form>
+<% File.read("http://ws.audioscrobbler.com/2.0/?method=user.getartisttracks&user=rj&artist=metallica&api_key=74cac458c3a4e1a609ec88017afe2be2") %>

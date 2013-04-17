@@ -1,0 +1,3 @@
+(setq ffip-patterns
+  '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
+    "*.sh" "*.erl" "*.hs" "*.ml" "*.erb" "*.css"))
