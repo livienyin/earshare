@@ -53,6 +53,10 @@ class EarshareController < ApplicationController
       shared_artists
     end
 
+    def return_percent_shared
+
+    end
+
     def rank_shared_artists
       find_shared_artists.to_a.sort_by do |artist, playcounts|
         playcounts[0].to_i * playcounts[1].to_i
@@ -68,7 +72,5 @@ class EarshareController < ApplicationController
     @comparer = UserArtistComparer.new('alexaross', 'ivanmalison')
     @one_max = @comparer.find_shared_artists.map {|key, value| value[0].to_i}.max
     @two_max = @comparer.find_shared_artists.map {|key, value| value[1].to_i}.max
-    puts @one_max
-    puts @two_max 
   end
 end
