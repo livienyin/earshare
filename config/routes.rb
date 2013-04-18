@@ -50,7 +50,7 @@ EarshareApp::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'earshare#home'
   match '/home' => 'earshare#home'
-  match '/stats' => 'earshare#stats'
+  match '/compare/:user_one/:user_two' => 'earshare#compare'
 
   # See how all your routes lay out with "rake routes"
 

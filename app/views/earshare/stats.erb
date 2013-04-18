@@ -1,4 +1,6 @@
-<h1>stats</h1>
+<h1>Stats</h1>
+Number of shared artists in top 150:
+<%= @comparer.find_shared_artists.count{|name, playcount| name} %>
 <table>
 <% @comparer.rank_shared_artists.each do |artist, playcounts| %>
 <tr>
