@@ -1,0 +1,28 @@
+<table>
+  <th><%= @comparer.user_one.username %></th>
+  <th>Artist</th>
+  <th><%= @comparer.user_two.username %></th>
+  <% @comparer.rank_shared_artists.each do |artist, playcounts| %>
+  <tr>
+    <td>
+      <div class="chartbar left">
+        <span style="width: <%= 100 * (playcounts[0].to_f / @one_max.to_f) %>%;">
+          <%= playcounts[0] %>
+        </span>
+      </div>
+    </td>
+    <td style="text-align: center">
+      <%= artist %>
+    </td>
+    <td>
+      <div class="chartbar right">
+        <span style="width:<%= 100 * (playcounts[1].to_f / @two_max.to_f) %>%;">
+          <%= playcounts[1] %>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
