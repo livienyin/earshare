@@ -19,7 +19,9 @@ class User < ActiveRecord::Base
       "format" => "json",
     }
     file = open("#{@@API_base_uri}?#{uri_params.to_query}") 
-    JSON.load(file.read)['friends']['user']
+    friends = JSON.load(file.read)['friends']['user']
+    friends = [friends] if friends.class != Array
+    friends
   end
 
   def artist_to_playcount_hash
