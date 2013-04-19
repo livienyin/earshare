@@ -1,20 +1,23 @@
-<h1>It worked for <%= @user.username %>!</h1>
-
 <table>
-<% unless @user_friends.nil? %>
+  <% unless @user_friends.nil? %>
   <% @user_friends.reverse.each do |friend_hash| %>
-    <tr>
-  	<td>
-  	  <img src="<%= friend_hash['image'][2]['#text'] %>">
-  	</td>
-  	<td>
-  	  <a href="/compare/<%= @user.username%>/<%= friend_hash['name']%>">
-  	    <%= friend_hash['name'] %>
-            <%= friend_hash['shared_artists'] %>
-  	  </a>
-  	</td>
-    </tr> 
+  <tr>
+    <td>
+      <img src="<%= friend_hash['image'][2]['#text'] %>">
+    </td>
+    <td>
+      <a href="/compare/<%= @user.username%>/<%= friend_hash['name']%>">
+        <%= friend_hash['name'] %>
+        <%= friend_hash['shared_artists'] %>
+      </a>
+    </td>
+  </tr> 
   <% end %>
-<% end %>
+  <% end %>
 </table>
 
+<% if @user.nil? %>
+  Invalid username, enter a last.fm username.
+  <%= link_to "Try Again", home_url %>
+  <%= link_to "Join Last.fm!", "http://www.last.fm/" %>
+<% end %>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EarshareControllerTest < ActionController::TestCase
+class IntuneControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

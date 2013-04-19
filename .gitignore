@@ -13,3 +13,4 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+set_last_fm_api_key.sh

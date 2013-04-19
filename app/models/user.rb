@@ -1,12 +1,25 @@
+require 'open-uri'
+
 class User < ActiveRecord::Base
   attr_accessible :username
   has_many :user_artists
   has_many :artists, :through => :user_artists
+  @@API_base_uri = "http://ws.audioscrobbler.com/2.0/"
   
   def self.refresh_user(username, reload = false)
-    user = where(:username => username).first_or_create
-    UserArtist.refresh_top_artists(user) if reload or user.user_artists.empty?
+    UserArtist.refresh_top_artists(username) if where(:username => username).empty?
     where(:username => username).first
+  end
+
+  def fetch_friends
+    uri_params = {
+      "method" => "user.getfriends",
+      "user" => self.username,
+      "api_key" => EarshareApp::Application::config.last_fm_api_key,
+      "format" => "json",
+    }
+    file = open("#{@@API_base_uri}?#{uri_params.to_query}") 
+    JSON.load(file.read)['friends']['user']
   end
 
   def artist_to_playcount_hash

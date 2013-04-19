@@ -25,7 +25,19 @@ class EarshareController < ApplicationController
   end
   
   def home
-    
+  end
+
+  def search
+    redirect_to( '/' + params[:username])
+  end
+
+  def show_user
+    @user = User.refresh_user(params[:username])
+    return if @user.nil?
+    @user_friends = @user.fetch_friends()
+    @user_friends = @user_friends.sort_by do |friend_hash|
+      friend_hash['shared_artists'] = UserArtistComparer.new(@user.username, friend_hash['name']).find_shared_artists.count
+    end
   end
 
   def compare
