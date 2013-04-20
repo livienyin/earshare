@@ -1,3 +1,15 @@
+<% if @user.nil? %>
+  Invalid username, enter a last.fm username.
+  <%= link_to "Try Again", home_url %>
+  <%= link_to "Join Last.fm!", "http://www.last.fm/" %>
+<% else %>
+<h2> Check out <%= @user.username %> on last.fm</h2>
+
+<% @user.artist_to_playcount_hash.each do |artist, playcount| %>
+  <%= artist %><%= playcount %>
+<% end %>
+
+
 <table>
   <% unless @user_friends.nil? %>
   <% @user_friends.reverse.each do |friend_hash| %>
@@ -13,11 +25,10 @@
     </td>
   </tr> 
   <% end %>
-  <% end %>
 </table>
-
-<% if @user.nil? %>
-  Invalid username, enter a last.fm username.
-  <%= link_to "Try Again", home_url %>
-  <%= link_to "Join Last.fm!", "http://www.last.fm/" %>
+<%= link_to "Feedback", comment_form_url %>
 <% end %>
+<% end %>
+
+
+

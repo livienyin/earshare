@@ -41,8 +41,21 @@ class EarshareController < ApplicationController
   end
 
   def compare
+    @username = params[:user_one]
     @comparer = UserArtistComparer.new(params[:user_one], params[:user_two])
     @one_max = @comparer.find_shared_artists.map {|key, value| value[0]}.max
     @two_max = @comparer.find_shared_artists.map {|key, value| value[1]}.max
   end
+
+  def comment_form
+    @username = params[:username]
+  end
+
+
+  def send_comments
+    @username = params[:username]
+    @subject = params[:subject]
+    EarshareMailer.form_email(params[:from], @subject, params[:body]).deliver
+  end
+
 end
