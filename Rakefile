@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-IntuneApp::Application.load_tasks
+EarshareApp::Application.load_tasks
