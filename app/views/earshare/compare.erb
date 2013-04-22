@@ -1,6 +1,8 @@
-<%= link_to 'Back', username_url(:username => @username) %>
+<div id="compare-graph">
 <table>
-  <th><%= @comparer.user_one.username %></th>
+  <th>
+    <%= link_to @comparer.user_one.username, username_url(:username => @username) %>
+  </th>
   <th>
     <%= @comparer.find_shared_artists.count{|name, playcount| name} %> Artists
   </th>
@@ -27,5 +29,6 @@
   </tr>
   <% end %>
 </table>
+</div>
 
 

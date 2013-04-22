@@ -3,30 +3,43 @@
   <%= link_to "Try Again", home_url %>
   <%= link_to "Join Last.fm!", "http://www.last.fm/" %>
 <% else %>
-<h2> Check out <%= @user.username %> on last.fm</h2>
 
-<% @user.artist_to_playcount_hash.each do |artist, playcount| %>
-  <%= artist %><%= playcount %>
+<div id="user-info">
+<div id="user-profile"><span id="name-style"><%= @user.username %>'s</span> top five</div>
+<div id="top-five">
+<ol>
+<% sum = 0 %>
+<% @user.artist_to_playcount_hash.first(5).each do |artist, playcount| %>
+  <li><%= artist %> <span id="playcount"><%= playcount %></span></li>
+  <% sum += playcount %>
 <% end %>
+<ol>
+</div>
+<div id="ranked-by-playcount">*ranked by playcounts</div>
+</div>
 
+<div id="friends-list">
 
 <table>
+  <th>Friend Username</th>
+  <th>Shared Artists</th>
+  <tr>
   <% unless @user_friends.nil? %>
   <% @user_friends.reverse.each do |friend_hash| %>
-  <tr>
-    <td>
-      <img src="<%= friend_hash['image'][2]['#text'] %>">
-    </td>
     <td>
       <a href="/compare/<%= @user.username%>/<%= friend_hash['name']%>">
         <%= friend_hash['name'] %>
+      </td>
+      <td>
         <%= friend_hash['shared_artists'] %>
+      </td>
       </a>
-    </td>
-  </tr> 
+    </tr>
   <% end %>
 </table>
-<%= link_to "Feedback", comment_form_url %>
+add more friends!
+</div>
+<%= link_to "Contact", comment_form_url %>
 <% end %>
 <% end %>
 

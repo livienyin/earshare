@@ -1,6 +1,8 @@
-
+<div id="home-content">
+<p>How compatible are your last.fm buds?</p>
 <%= form_tag(search_path, :method => "get") do %>
-  <%= label_tag( :username, "Enter last.fm username:") %>
-  <%= text_field_tag(:username) %>
-  <%= submit_tag("Submit") %>
+  <%= text_field_tag :username, nil, :placeholder => 'last.fm username'%>
+  <%= submit_tag("submit") %>
 <% end %>
+</div>
+

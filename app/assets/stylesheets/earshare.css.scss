@@ -2,6 +2,165 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    background-color: #FFE503;
+    border-top: 12px solid black;
+    width: 100%;
+    margin: 0;
+    font-family: 'Averia Serif Libre';
+}
+
+#nav {
+    padding: 25px;
+    height: 40px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#logo h1 {
+    padding: 0;
+    width: 300px;
+    margin: 0;
+    float: left;
+    line-height: 1;
+    font-size: 36px;
+    font-family: Times;
+}
+
+.nav-links {
+    padding: 5px 0 5px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 150px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    float: right;
+}
+
+#main {
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+#home-content {
+    overflow: auto;
+    background-color: #F7F0E6; 
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+#home-content p {
+    color: #ED1B24;
+    font-size: 6em;
+    line-height: 1.25;
+    font-family: 'Fugaz One';
+    margin-bottom: 50px;
+    padding: 0 20px 0 20px;
+}
+
+#username {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Fugaz One';
+}
+
+#main input[type="submit"] {
+    background-color: #00d9d1;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    width: 100px;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Fugaz One'
+ }
+
+#user-info {
+    border-right: 11px solid black;
+    margin-top: 0;
+    padding-top: 30px;
+    background-color: #B8DCCE;
+    float: left;
+    width: 33%;
+    height: 800px;
+    overflow: auto;
+    font-family: 'Fugaz One';
+}
+
+#user-profile {
+    font-size: 3em;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 20px;
+    /*border-bottom: 5px solid black;*/
+}
+
+#name-style {
+    color: white;
+}
+
+#top-five {
+    margin-top: 30px;
+}
+
+#top-five ol {
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#playcount {
+    color: red;
+}
+
+#ranked-by-playcount {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#friends-list {
+    float: left;
+    width: 64%;
+    background-color: white;
+    text-align: center;
+    font-family: 'Averia Serif Libre';
+}
+
+#friends-list th {
+    font-size: 4em;
+}
+
+#friends-list a {
+    font-size: 3em;
+}
+
+#compare-graph {
+    padding: 30px;
+    background-color: #F7F0E6; 
+    overflow: auto;
+}
+
+#compare-graph th {
+    font-family: 'Fugaz One';
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+#compare-graph a:hover {
+    color: #00d9d1;
+}
+
 table {
     margin: auto;
 }
@@ -15,25 +174,38 @@ div.chartbar {
 div.chartbar span {
     display: block;
     height: 17px;
-    padding: 3px 0.5em 0 0.5em;
+    /*padding: 3px 0.5em 0 0.5em;*/
+    padding: 6px;
     color: #fff;
     overflow: hidden;
 }
 
 div.left span {
-    background: #71b7e6;
+    background: #f90019;
     align: right;
     float: right;
     text-align: right;
-    -moz-border-radius: 3px 0px 0px 3px;
-    border-radius: 3px 0px 0px 3px;
+    /*-moz-border-radius: 3px 0px 0px 3px;*/
+    /*border-radius: 3px 0px 0px 3px;*/
 }
 
 div.right span {
-    background: red;
+    background: #00d9d1;
     align: left;
     float: left;
-    -moz-border-radius: 0 3px 3px 0;
-    border-radius: 0 3px 3px 0;
+    /*-moz-border-radius: 0 3px 3px 0;*/
+    /*border-radius: 0 3px 3px 0;*/
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
