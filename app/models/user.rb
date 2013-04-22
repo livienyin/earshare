@@ -25,10 +25,10 @@ class User < ActiveRecord::Base
   end
 
   def artist_to_playcount_hash
-    map = {}
-    user_artists.each do |user_artist|
-      map[user_artist.artist.name] = user_artist.playcount
+    artist_to_playcount_map = {}
+    self.user_artists.each do |user_artist|
+      artist_to_playcount_map[user_artist.artist.name] = user_artist.playcount
     end
-    map
+    artist_to_playcount_map
   end
 end

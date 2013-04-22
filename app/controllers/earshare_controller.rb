@@ -11,16 +11,16 @@ class EarshareController < ApplicationController
     def find_shared_artists
       shared_artists = {}
       user_two_artist_to_playcount_hash = @user_two.artist_to_playcount_hash
-      @user_one.artist_to_playcount_hash.each do |key, value|
-        shared_artists[key] = [value, user_two_artist_to_playcount_hash[key]] unless user_two_artist_to_playcount_hash[key].nil?
+      @user_one.artist_to_playcount_hash.each do |artist, play_count|
+        shared_artists[artist] = [play_count, user_two_artist_to_playcount_hash[artist]] unless user_two_artist_to_playcount_hash[artist].nil?
       end
       shared_artists
     end
 
     def rank_shared_artists
       find_shared_artists.to_a.sort_by do |artist, playcounts|
-        playcounts[0].to_i * playcounts[1].to_i
-      end.reverse
+        -(playcounts[0].to_i * playcounts[1].to_i)
+      end
     end
   end
   
