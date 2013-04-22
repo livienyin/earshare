@@ -5,8 +5,12 @@
 <% else %>
 
 <div id="user-info">
-<div id="user-profile"><span id="name-style"><%= @user.username %>'s</span> top five</div>
+<div id="user-profile">
+  <span id="name-style"><%= @user.username %>'s</span> top five <br />
+  <span id="ranked-by-playcount">*ranked by playcounts</span>
+</div>
 <div id="top-five">
+
 <ol>
 <% sum = 0 %>
 <% @user.artist_to_playcount_hash.first(5).each do |artist, playcount| %>
@@ -15,31 +19,31 @@
 <% end %>
 <ol>
 </div>
-<div id="ranked-by-playcount">*ranked by playcounts</div>
+
 </div>
 
 <div id="friends-list">
 
 <table>
-  <th>Friend Username</th>
-  <th>Shared Artists</th>
+  <th>friends</th>
+  <th>shared artists</th>
   <tr>
   <% unless @user_friends.nil? %>
   <% @user_friends.reverse.each do |friend_hash| %>
-    <td>
+      <td>
       <a href="/compare/<%= @user.username%>/<%= friend_hash['name']%>">
         <%= friend_hash['name'] %>
       </td>
+      <div id="number">
       <td>
         <%= friend_hash['shared_artists'] %>
       </td>
+      </div>
       </a>
     </tr>
   <% end %>
 </table>
-add more friends!
 </div>
-<%= link_to "Contact", comment_form_url %>
 <% end %>
 <% end %>
 

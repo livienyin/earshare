@@ -53,8 +53,8 @@ EarshareApp::Application.routes.draw do
   get '/search' => 'earshare#search'
 
   get '/compare/:user_one/:user_two' => 'earshare#compare', :as => 'compare'
-  get '/:username/send_comments' => 'earshare#comment_form', :as => 'comment_form'
-  post '/:username/send_comments' => 'earshare#send_comments'
+  get '/send_comments' => 'earshare#comment_form', :as => 'comment_form'
+  post '/send_comments' => 'earshare#send_comments'
 
   get '/:username' => 'earshare#show_user', :as => 'username'
 

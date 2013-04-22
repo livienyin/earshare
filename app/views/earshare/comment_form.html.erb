@@ -1,5 +1,5 @@
-<%= link_to 'Back', username_url(:username => @username) %>
-<form action="/<%= @username %>/send_comments" method="post">
+<%#= link_to 'Back', username_url(:username => @username) %>
+<form action="/send_comments" method="post">
   <div>
   <input type="email" placeholder="Your email address" name="from">
   </div>

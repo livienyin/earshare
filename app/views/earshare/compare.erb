@@ -1,12 +1,14 @@
 <div id="compare-graph">
 <table>
   <th>
-    <%= link_to @comparer.user_one.username, username_url(:username => @username) %>
+    <%= link_to @comparer.user_one.username, username_url(:username => @comparer.user_one.username) %>
   </th>
   <th>
     <%= @comparer.find_shared_artists.count{|name, playcount| name} %> Artists
   </th>
-  <th><%= @comparer.user_two.username %></th>
+  <th>
+    <%= link_to @comparer.user_two.username, username_url(:username => @comparer.user_two.username) %>
+  </th>
   <% @comparer.rank_shared_artists.each do |artist, playcounts| %>
   <tr>
     <td>

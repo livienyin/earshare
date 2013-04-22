@@ -48,12 +48,12 @@ class EarshareController < ApplicationController
   end
 
   def comment_form
-    @username = params[:username]
+    # @username = params[:username]
   end
 
 
   def send_comments
-    @username = params[:username]
+    # @username = params[:username]
     @subject = params[:subject]
     EarshareMailer.form_email(params[:from], @subject, params[:body]).deliver
   end
