@@ -11,7 +11,7 @@ EarshareApp::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587, 
-    :domain => "mysite.com",
+    :domain => "desolate-atoll-7850.herokuapp.com",
     :user_name => "livienyin",
     :password => ENV['GMAIL_PASSWORD'],
     :authentication => "plain",
