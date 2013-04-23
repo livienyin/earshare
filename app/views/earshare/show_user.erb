@@ -1,8 +1,13 @@
+<div id="invalid-search">
 <% if @user.nil? %>
-  Invalid username, enter a last.fm username.
-  <%= link_to "Try Again", home_url %>
-  <%= link_to "Join Last.fm!", "http://www.last.fm/" %>
+  <p>Invalid username,<br /> try a new username.</p>
+  <%= form_tag(search_path, :method => "get") do %>
+  <%= text_field_tag :username, nil, :placeholder => 'last.fm username'%>
+  <%= submit_tag("Submit") %><span id="join-lastfm"><%= link_to "Join Last.fm!", "http://www.last.fm/" %></span>
+<% end %>
 <% else %>
+</div>
+
 
 <div id="user-info">
 <div id="user-profile">

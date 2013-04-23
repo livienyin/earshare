@@ -1,15 +1,13 @@
-<%#= link_to 'Back', username_url(:username => @username) %>
+<div id="feedback-form">
+  <p>feedback?</p>
 <form action="/send_comments" method="post">
-  <div>
-  <input type="email" placeholder="Your email address" name="from">
-  </div>
-  <div>
-    <input type="text" placeholder="Yo subject" name="subject">
-  </div>
-  <div>
-    <%= text_area_tag :body, nil, :placeholder => "Enter yo message"%>
-  </div>
-  <div>
-    <%= submit_tag "Send yo email" %>
-  </div>
+ 
+  <input type="email" placeholder="your email address" name="from">
+ 
+  <input type="text" placeholder="email subject" name="subject">
+
+  <%= text_area_tag :body, nil, :placeholder => "anything you like"%>
+
+  <%= submit_tag "send" %>
 </form>
+</div>

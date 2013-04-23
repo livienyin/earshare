@@ -57,5 +57,4 @@ class EarshareController < ApplicationController
     @subject = params[:subject]
     EarshareMailer.form_email(params[:from], @subject, params[:body]).deliver
   end
-
 end

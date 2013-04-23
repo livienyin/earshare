@@ -48,20 +48,48 @@ body {
     
 }
 
-#home-content {
+#home-content, #invalid-search {
     overflow: auto;
     background-color: #F7F0E6; 
     text-align: center;
     padding-bottom: 140px;
 }
 
-#home-content p {
+#home-content p, #invalid-search p {
     color: #ED1B24;
     font-size: 6em;
     line-height: 1.25;
     font-family: 'Fugaz One';
     margin-bottom: 50px;
     padding: 0 50px 0 50px;
+}
+
+#invalid-search p {
+    color: #031634;
+}
+
+#main input[type="submit"] {
+    background-color: #00d9d1;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    width: 100px;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Fugaz One'
+ }
+
+#join-lastfm a {
+    background-color: #ED1B24;
+    border: none;
+    padding: 5px 12px 5px 12px;
+    margin-left: 3px;
+    width: 100px;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Fugaz One'
 }
 
 #username {
@@ -76,18 +104,6 @@ body {
     text-align: center;
     font-family: 'Fugaz One';
 }
-
-#main input[type="submit"] {
-    background-color: #00d9d1;
-    border: none;
-    padding: 5px;
-    margin: 0;
-    width: 100px;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    font-family: 'Fugaz One'
- }
 
 #user-info {
     padding: 30px;
@@ -174,6 +190,68 @@ body {
     color: #00d9d1;
 }
 
+#feedback-form {
+    background-color: #F6F3EC;
+    width: 40%;
+    padding: 30px;
+    margin: auto;
+    line-height: 1;
+    text-align: center;
+    overflow: auto;
+    font-family: 'Fugaz One';
+}
+
+#feedback-form p {
+    color: #61690A;
+    font-size: 5em;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+#feedback-form input, textarea {
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    /*border-radius: 3px;*/
+    border: 1px solid #61690A;
+    margin: 5px;
+    background-color: white;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Averia Serif Libre';
+}
+
+#feedback-form textarea {
+    height: 150px;
+}
+
+#feedback-form input[type="submit"] {
+    background-color: #5F0019;
+    margin-top: 10px;
+    width: 130px;
+    height: 60px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+#email-sent {
+    background-color: #F6F3EC;
+    width: 50%;
+    padding: 40px;
+    margin: auto;
+    line-height: 1;
+    text-align: center;
+    overflow: auto;
+    color: #61690A;
+    font-size: 2em;
+    font-family: 'Fugaz One';
+}
+
+#email-sent span {
+    line-height: 2;
+    font-size: 3em;
+    color: #5F0019;
+}
 table {
     margin: auto;
 }
