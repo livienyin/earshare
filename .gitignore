@@ -14,3 +14,5 @@
 /log/*.log
 /tmp
 set_last_fm_api_key.sh
+
+/coverage

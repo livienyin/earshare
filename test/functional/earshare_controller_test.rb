@@ -5,3 +5,4 @@ class EarShareControllerTest < ActionController::TestCase
   #   assert true
   # end
 end
+
