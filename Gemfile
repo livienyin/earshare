@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'simplecov'
   gem 'sqlite3'
+  gem 'pry'
 end
 
 group :production do 

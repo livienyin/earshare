@@ -8,13 +8,15 @@ describe User do
   end
 
   it "has many artists" do
-    user = User.new(:username => "Livien")
-    artist_one = Artist.new(:name => "Beatles")
-    artist_two = Artist.new(:name => "Tom Waits")
+    user = User.create(:username => "Livien")
+    artist_one = Artist.create(:name => "Beatles")
+    artist_two = Artist.create(:name => "Tom Waits")
+    user_artist_one = UserArtist.create(:user_id => user.id, :artist_id => artist_one.id)
+    user_artist_two = UserArtist.create(:user_id => user.id, :artist_id => artist_two.id)
+
     expect(user.artists).to be_an Array
     expect(user.artists.size).to eq 2
-    expect(user.artists).to include artist1
-    expect(user.artists).to include artist2
+    expect(user.artists).to include artist_one
+    expect(user.artists).to include artist_two
   end
-  
 end
