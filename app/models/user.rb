@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class User < ActiveRecord::Base
-  attr_accessible :username
+  attr_accessible :username 
   has_many :user_artists
   has_many :artists, :through => :user_artists
   @@API_base_uri = "http://ws.audioscrobbler.com/2.0/"
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
       "api_key" => EarshareApp::Application::config.last_fm_api_key,
       "format" => "json",
     }
-    file = open("#{@@API_base_uri}?#{uri_params.to_query}") 
+    file = open("#{@@API_base_uri}?#{uri_params.to_query}")
     friends = JSON.load(file.read)['friends']['user']
     friends = [friends] if friends.class != Array
     friends
