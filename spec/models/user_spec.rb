@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 describe User do
 
@@ -54,4 +53,9 @@ describe User do
     
     user.fetch_friends.should == ["Dave"]
   end
+
+  it "calls to UserArtist when refreshing user" do
+    "fun"
+  end
+  
 end
